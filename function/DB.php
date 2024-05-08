@@ -1,19 +1,22 @@
-<?php 
-class DB {
-    private function Connection(){
+<?php
+class DB
+{
+    private function Connection()
+    {
         $HOST = "localhost";
         $USER = "root";
         $PASS = "";
         $DBNAME = "erp_system";
-        $DB = new mysqli($HOST , $USER  , $PASS  , $DBNAME);
+        $DB = new mysqli($HOST, $USER, $PASS, $DBNAME);
         if ($DB->connect_errno) {
-            echo "". $DB->connect_error;
+            echo "" . $DB->connect_error;
             exit();
         }
-        return $DB; 
+        return $DB;
     }
 
-    public function Login($email , $password){
+    public function Login($email, $password)
+    {
         $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password' limit 1";
         $result = $this->Connection()->query($sql);
         if ($result->num_rows > 0) {
@@ -22,14 +25,45 @@ class DB {
                 session_start();
                 $_SESSION['id'] = $row;
                 return true;
-            }else{
+            } else {
                 return false;
             }
-        }else{
+        } else {
             return false;
         }
-
     }
 
-    }    
+    public function Statue($id)
+    {
+        $sql = "UPDATE users SET status = 1 WHERE user_id = '$id'";
+        $result = $this->Connection()->query($sql);
+        if ($result) {
+            return true;
+        }
+    }
+
+    public function Logout($id)
+    {
+        $sql = "UPDATE users SET status = 0 WHERE user_id = '$id'";
+        $result = $this->Connection()->query($sql);
+        if ($result) {
+            session_start();
+            session_unset();
+            session_destroy();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function Role($id)
+    {
+        $sql = "SELECT role FROM users WHERE user_id = '$id'";
+        $result = $this->Connection()->query($sql);
+        if ($result->num_rows > 0){
+            $row = $result->fetch_assoc();
+            return $row['role'];
+        }
+    }
+}
 ?>

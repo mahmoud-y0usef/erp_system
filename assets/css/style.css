@@ -213,3 +213,12 @@ svg {
   margin:  20px; 
 }
 }
+
+.error {
+  color:  #ff0033 !important; 
+  font-size:  12px !important; 
+  font-weight:  400 !important; 
+  margin-top:  5px !important; 
+  margin-left:  5px !important; 
+  opacity:  .7 !important; 
+}
