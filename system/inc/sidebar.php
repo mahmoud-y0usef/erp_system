@@ -1,108 +1,169 @@
 <div class="logo d-flex justify-content-between">
-        <a href="index-2.html"><img src="assets/img/club-logo.png" alt></a>
-        <div class="sidebar_close_icon d-lg-none">
-            <i class="ti-close"></i>
-        </div>
+    <a href="index-2.html"><img src="assets/img/club-logo.png" alt></a>
+    <div class="sidebar_close_icon d-lg-none">
+        <i class="ti-close"></i>
     </div>
-    <ul id="sidebar_menu">
-        <li class="mm-active">
-            <a class="has-arrow" href="#" aria-expanded="false">
+</div>
 
-                <img src="assets/img/menu-icon/1.svg" alt>
-                <span>Dashboard</span>
-            </a>
-            <ul>
-                <li><a class="active" href="index-2.html">Classic</a></li>
-                <li><a href="index_2.html">Minimal</a></li>
-            </ul>
-        </li>
-        <li class>
+<?php
+    $role = $db->Role($_SESSION['id']['user_id']); 
+    $deb = [$db->DebShow(1) , $db->DebShow(2) , $db->DebShow(3) , $db->DebShow(4) , $db->DebShow(5) , $db->DebShow(6) , $db->DebShow(7) , $db->DebShow(8) , $db->DebShow(9) , $db->DebShow(10) , $db->DebShow(11) , $db->DebShow(12) , $db->DebShow(13) , $db->DebShow(14) , $db->DebShow(15)];
+
+   
+ ?>
+<?php if ($role['role_id'] == 4 || $role['role_id'] == 14): ?>
+    <ul id="sidebar_menu">
+        <li >
             <a class="has-arrow" href="#" aria-expanded="false">
-                <img src="assets/img/menu-icon/2.svg" alt>
-                <span>Pages</span>
+                <i></i>             
+                <span><?php echo $deb[0] ?></span>
             </a>
             <ul>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="resister.html">Register</a></li>
-                <li><a href="forgot_pass.html">Forgot Password</a></li>
+                <li><a class="active" href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
             </ul>
         </li>
-        <li class>
+        <li >
             <a class="has-arrow" href="#" aria-expanded="false">
-                <img src="assets/img/menu-icon/3.svg" alt>
-                <span>Applications</span>
+                <i></i>             
+                <span><?php echo $deb[1] ?></span>
             </a>
             <ul>
-                <li><a href="mail_box.html">Mail Box</a></li>
-                <li><a href="chat.html">Chat</a></li>
-                <li><a href="faq.html">FAQ</a></li>
+                <li><a class="active" href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
             </ul>
         </li>
-        <li class>
+        <li >
             <a class="has-arrow" href="#" aria-expanded="false">
-                <img src="assets/img/menu-icon/4.svg" alt>
-                <span>UI Component</span>
+                <i></i>             
+                <span><?php echo $deb[2] ?></span>
             </a>
             <ul>
-                <li><a href="#">Elements</a>
-                    <ul>
-                        <li><a href="buttons.html">Buttons</a></li>
-                        <li><a href="dropdown.html">Dropdowns</a></li>
-                        <li><a href="Badges.html">Badges</a></li>
-                        <li><a href="Loading_Indicators.html">Loading Indicators</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Components</a>
-                    <ul>
-                        <li><a href="notification.html">Notifications</a></li>
-                        <li><a href="progress.html">Progress Bar</a></li>
-                        <li><a href="carousel.html">Carousel</a></li>
-                        <li><a href="cards.html">cards</a></li>
-                        <li><a href="Pagination.html">Pagination</a></li>
-                    </ul>
-                </li>
+                <li><a class="active" href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
             </ul>
         </li>
-        <li class>
+        <li >
             <a class="has-arrow" href="#" aria-expanded="false">
-                <img src="assets/img/menu-icon/5.svg" alt>
-                <span>Widgets</span>
+                <i></i>             
+                <span><?php echo $deb[3] ?></span>
             </a>
             <ul>
-                <li><a href="chart_box_1.html">Chart Boxes 1</a></li>
-                <li><a href="profilebox.html">Profile Box</a></li>
+                <li><a class="active" href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
             </ul>
         </li>
-        <li class>
+        <li >
             <a class="has-arrow" href="#" aria-expanded="false">
-                <img src="assets/img/menu-icon/6.svg" alt>
-                <span>Forms</span>
+                <i></i>             
+                <span><?php echo $deb[4] ?></span>
             </a>
             <ul>
-                <li><a href="#">Elements</a>
-                    <ul>
-                        <li><a href="data_table.html">Data Tables</a></li>
-                        <li><a href="bootstrap_table.html">Grid Tables</a></li>
-                        <li><a href="datepicker.html">Date Picker</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Widgets</a>
-                    <ul>
-                        <li><a href="Input_Selects.html">Input Selects</a></li>
-                        <li><a href="Input_Mask.html">Input Mask</a></li>
-                    </ul>
-                </li>
+                <li><a class="active" href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
             </ul>
         </li>
-        <li class>
+        <li >
             <a class="has-arrow" href="#" aria-expanded="false">
-                <img src="assets/img/menu-icon/7.svg" alt>
-                <span>Charts</span>
+                <i></i>             
+                <span><?php echo $deb[5] ?></span>
             </a>
             <ul>
-                <li><a href="chartjs.html">ChartJS</a></li>
-                <li><a href="apex_chart.html">Apex Charts</a></li>
-                <li><a href="chart_sparkline.html">chart sparkline</a></li>
+                <li><a class="active" href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
             </ul>
         </li>
+        <li >
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <i></i>             
+                <span><?php echo $deb[6] ?></span>
+            </a>
+            <ul>
+                <li><a class="active" href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
+            </ul>
+        </li>
+        <li >
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <i></i>             
+                <span><?php echo $deb[7] ?></span>
+            </a>
+            <ul>
+                <li><a class="active" href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
+            </ul>
+        </li>
+        <li >
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <i></i>             
+                <span><?php echo $deb[8] ?></span>
+            </a>
+            <ul>
+                <li><a class="active" href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
+            </ul>
+        </li>
+        <li >
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <i></i>             
+                <span><?php echo $deb[9] ?></span>
+            </a>
+            <ul>
+                <li><a class="active" href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
+            </ul>
+        </li>
+        <li >
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <i></i>             
+                <span><?php echo $deb[10] ?></span>
+            </a>
+            <ul>
+                <li><a class="active" href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
+            </ul>
+        </li>
+        <li >
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <i></i>             
+                <span><?php echo $deb[11] ?></span>
+            </a>
+            <ul>
+                <li><a class="active" href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
+            </ul>
+        </li>
+        <li >
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <i></i>             
+                <span><?php echo $deb[12] ?></span>
+            </a>
+            <ul>
+                <li><a class="active" href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
+            </ul>
+        </li>
+        <li >
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <i></i>             
+                <span><?php echo $deb[13] ?></span>
+            </a>
+            <ul>
+                <li><a class="active" href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
+            </ul>
+        </li>
+        <li >
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <i></i>             
+                <span><?php echo $deb[14] ?></span>
+            </a>
+            <ul>
+                <li><a class="active" href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
+            </ul>
+        </li>
+        
     </ul>
+
+<?php endif; ?>

@@ -1,5 +1,5 @@
 <?php
-$title = "Login";
+$title = "تسجيل دخول";
 include 'inc/header.php';
 ?>
 <div class="session">
@@ -11,15 +11,15 @@ include 'inc/header.php';
         <?php 
             if(isset($_GET['error'])){
                 if($_GET['error'] == 'emptyfields'){
-                    echo '<p class="error">Fill in all fields!</p>';
+                    echo '<p class="error">من فضلك قم بملئ البيانات</p>';
                 }else if($_GET['error'] == 'wrongdata'){
-                    echo '<p class="error">Wrong email or password!</p>';
+                    echo '<p class="error">خطأ في الإيميل أو الباسورد</p>';
                 }
             }
         ?>
-        <h4>Wej Club Login</h4>
+        <h4>تسجيل دخول نادي وج الرياضي</h4>
         <div class="floating-label">
-            <input placeholder="Email" type="email" name="email" required id="email" autocomplete="off">
+            <input placeholder="أدخل البريد الإلكتروني" type="email" name="email" required id="email" autocomplete="off">
             <label for="email">Email:</label>
             <div class="icon">
 
@@ -40,7 +40,7 @@ include 'inc/header.php';
             </div>
         </div>
         <div class="floating-label">
-            <input placeholder="Password" type="password" name="password" required id="password" autocomplete="off">
+            <input placeholder="أدخل الرمز السري" type="password" name="password" required id="password" autocomplete="off">
             <label for="password">Password:</label>
             <div class="icon">
 
@@ -66,7 +66,7 @@ include 'inc/header.php';
             </div>
 
         </div>
-        <button type="submit">Log in</button>
+        <button type="submit">تسجيل</button>
     </form>
 </div>
 <?php

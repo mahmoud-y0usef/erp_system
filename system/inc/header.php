@@ -10,9 +10,9 @@
             exit();
         }
         require_once '../function/DB.php';
-        require_once 'function/opjects.php';
-        $opjects = new Opjects();
-        $title = $opjects->title($_SESSION['id']['role']);
+    
+        $db = new DB();
+        $title = $db->Role($_SESSION['id']['user_id']);
 
         if (isset($_GET['logout'])) {
             $db = new DB();
@@ -25,7 +25,7 @@
     ?>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>ERP | <?php  echo $title ?></title>
+    <title>ERP | <?php  echo $title['name'] ?></title>
     <link rel="icon" href="assets/img/club-logo.png" type="image/png">
 
     <link rel="stylesheet" href="assets/css/bootstrap1.min.css" />

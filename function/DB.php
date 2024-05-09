@@ -62,7 +62,28 @@ class DB
         $result = $this->Connection()->query($sql);
         if ($result->num_rows > 0){
             $row = $result->fetch_assoc();
-            return $row['role'];
+            $sql = "SELECT * FROM role WHERE role_id = '$row[role]'";
+            $result = $this->Connection()->query($sql);
+            if ($result->num_rows > 0){
+                $row = $result->fetch_assoc();
+                return $row;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public function DebShow($id)
+    {
+        $sql = "SELECT * FROM dept where id_dept = '$id'";
+        $result = $this->Connection()->query($sql);
+        if ($result->num_rows > 0){
+            $row = $result->fetch_assoc();
+            return $row['name'];
+        } else {
+            return false;
         }
     }
 }

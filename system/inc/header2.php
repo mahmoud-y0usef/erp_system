@@ -23,11 +23,10 @@
     <div class="profile_info">
         <img src="<?php echo $_SESSION['id']['img'] == 'user.png' ? 'assets/img/'.$_SESSION['id']['img']: 'assets/img/avatar/'.$_SESSION['id']['img'] ?>" alt="#">
         <div class="profile_info_iner">
-            <p><?php echo $title ?></p>
+            <p><?php echo $title['name'] ?></p>
             <h5><?php echo $_SESSION['id']['full_name'] ?></h5>
             <div class="profile_info_details">
-                <a href="#">My Profile <i class="ti-user"></i></a>
-                <a href="#">Settings <i class="ti-settings"></i></a>
+                <a href="?profile">My Profile <i class="ti-user"></i></a>
                 <a href="?logout">Log Out <i class="ti-shift-left"></i></a>
             </div>
         </div>
