@@ -47,7 +47,23 @@
 
 <script src="assets/vendors/apex_chart/bar_active_1.js"></script>
 <script src="assets/vendors/chartjs/chartjs_active.js"></script>
-
+<script>
+    $(function () {
+        bol = false;
+        $(".inner ul").fadeOut(200);
+        $(".inner").click(function () {
+            if (bol) {
+                $(".inner a").attr('aria-expanded' , "false");
+                $(".inner ul").fadeOut(200);
+                bol = false;
+            } else {
+                $(".inner a").attr('aria-expanded' , "true");
+                $(".inner ul").fadeIn(200);
+                bol = true;
+            }
+        })
+    })
+</script>
 </body>
 
 </html>

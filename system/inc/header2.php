@@ -4,10 +4,7 @@
 <div class="serach_field-area">
     <div class="search_inner">
         <form action="#">
-            <div class="search_field">
-                <input type="text" placeholder="Search here...">
-            </div>
-            <button type="submit"> <img src="assets/img/icon/icon_search.svg" alt> </button>
+        
         </form>
     </div>
 </div>

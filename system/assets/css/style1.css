@@ -6482,3 +6482,6 @@ canvas#highlights {
 span {
     margin-right: 10px !important;
 }
+.inner{
+ padding: 15px !important;
+}

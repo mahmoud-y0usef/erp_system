@@ -86,5 +86,17 @@ class DB
             return false;
         }
     }
+
+    public function Dept($id)
+    {
+        $sql = "SELECT * FROM dept where id_dept = '$id'";
+        $result = $this->Connection()->query($sql);
+        if ($result->num_rows > 0){
+            $row = $result->fetch_assoc();
+            return $row['id_dept'];
+        } else {
+            return false;
+        }
+    }
 }
 ?>
