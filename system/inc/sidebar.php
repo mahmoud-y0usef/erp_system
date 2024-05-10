@@ -93,6 +93,7 @@ $deb = [$db->DebShow(1), $db->DebShow(2), $db->DebShow(3), $db->DebShow(4), $db-
                 </a>
                 
                 <ul class="inner">
+                    <!-- جودو -->
                     <?php if ($role['role_id'] == 12 || $role['role_id'] == 14 || $role['role_id'] == 28 || $role['role_id'] == 29): ?>
                         <a class="has-arrow" href="#" aria-expanded="false">
                             <i></i>
@@ -103,6 +104,7 @@ $deb = [$db->DebShow(1), $db->DebShow(2), $db->DebShow(3), $db->DebShow(4), $db-
                             <li><a href="#">test2</a></li>
                         </ul>
                     <?php endif; ?>
+                    <!-- كراتيه -->
                     <?php if ($role['role_id'] == 12 || $role['role_id'] == 14 || $role['role_id'] == 30 || $role['role_id'] == 31): ?>
                         <a class="has-arrow" href="#" aria-expanded="false">
                             <i></i>
