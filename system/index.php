@@ -23,17 +23,18 @@
             </div>
         </div>
     </div>
-
-    <div class="main_content_iner ">
-        <div class="container-fluid plr_30 body_white_bg pt_30">
-            <div class="row justify-content-center">
-                
-                <div class="col-lg-12">
-                   <img src="assets/img/struct.png">
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php 
+        if(isset($_GET['admin_panel']))
+            require 'view/admin_panel.php';
+        elseif(isset($_GET['profile']))
+            require 'view/profile.php';
+        elseif(isset($_GET['edit_profile']))
+            require 'view/edit_profile.php';
+        else
+            require 'view/mainpage.php';
+    ?>
+    
+    
 
     <div class="footer_part">
         <?php 

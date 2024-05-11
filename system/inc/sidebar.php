@@ -317,7 +317,7 @@ $department = $db->Dept($_SESSION['id']['dept']);
                 </a>
                 <ul>
                     <li><a class="active" href="#">الطلبات</a></li>
-                    <li><a href="#">test2</a></li>
+                    <li><a href="?admin_panel">Admin Panel</a></li>
                 </ul>
             </li>
         <?php endif; ?>

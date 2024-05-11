@@ -18,7 +18,7 @@
         </li>
     </div>
     <div class="profile_info">
-        <img src="<?php echo $_SESSION['id']['img'] == 'user.png' ? 'assets/img/'.$_SESSION['id']['img']: 'assets/img/avatar/'.$_SESSION['id']['img'] ?>" alt="#">
+        <img src="assets/img/avatar/<?php echo $db->User($_SESSION['id']['user_id'])['img']; ?>" alt="#">
         <div class="profile_info_iner">
             <p><?php echo $title['name'] ?></p>
             <h5><?php echo $_SESSION['id']['full_name'] ?></h5>
