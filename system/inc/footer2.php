@@ -49,20 +49,20 @@
 <script src="assets/vendors/chartjs/chartjs_active.js"></script>
 <script>
     $(function () {
-        bol = false;
-        $(".inner ul").fadeOut(200);
-        $(".inner").click(function () {
-            if (bol) {
-                $(".inner a").attr('aria-expanded' , "false");
-                $(".inner ul").fadeOut(200);
-                bol = false;
-            } else {
-                $(".inner a").attr('aria-expanded' , "true");
-                $(".inner ul").fadeIn(200);
-                bol = true;
-            }
-        })
-    })
+        $(".inner ul").hide(); // Initially hide all UL elements
+        $(".inner a").click(function (e) {
+            e.preventDefault(); // Prevent the default behavior of anchor tags
+
+            var $parent = $(this).parent(); // Get the parent .inner element
+            var $ul = $parent.find("ul"); // Get the UL element within the clicked .inner element
+
+            // Close all UL elements except the one within the clicked .inner element
+            $(".inner ul").not($ul).slideUp(200);
+            // Toggle the visibility of the UL element within the clicked .inner element
+            $ul.slideToggle(200);
+        });
+    });
+
 </script>
 </body>
 
