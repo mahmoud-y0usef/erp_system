@@ -16,8 +16,8 @@
                         href="#list-home" role="tab" aria-controls="list-home">الأقسام</a>
                     <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list"
                         href="#list-profile" role="tab" aria-controls="list-profile">الرولات</a>
-                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list"
-                        href="#list-messages" role="tab" aria-controls="list-messages">الموظفين</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" 
+                        href="?add_emp" role="tab">الموظفين</a>
                 </div>
             </div>
             <div class="col-8">
@@ -36,12 +36,33 @@
                                     <tr>
                                         <th scope="row"><?php echo $key + 1 ?></th>
                                         <td><?php echo $dept['name'] ?></td>
-                                        <td><a class="btn btn-primary" href="?edit_deb&id=<?= $dept['id_dept'] ?>">Edit</a></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                data-target="#exampleModal_dept_<?php echo $dept['id_dept']; ?>">
+                                                Edit
+                                            </button>
+                                        </td>
                                     </tr>
+                                    <!-- Modal for department -->
+                                    <div class="modal fade" id="exampleModal_dept_<?php echo $dept['id_dept']; ?>" tabindex="-1"
+                                        aria-labelledby="exampleModalLabelDept_<?php echo $dept['id_dept']; ?>"
+                                        aria-hidden="true">
+                                        <?php
+                                        $name = 'القسم';
+                                        $form_action = 'edit_dept.php';
+                                        $label = 'القسم';
+                                        $input_name = 'dept';
+                                        $value = $dept['name'];
+                                        $id = $dept['id_dept'];
+                                        $submit_button_name = 'edit_dept';
+                                        include 'modal_template.php';
+                                        ?>
+                                    </div>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
+
                     <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
                         <h1>الرولات</h1>
                         <table class="table">
@@ -56,41 +77,33 @@
                                     <tr>
                                         <th scope="row"><?php echo $key + 1 ?></th>
                                         <td><?php echo $role['name'] ?></td>
-                                        <td><a class="btn btn-primary" href="?edit_role&id=<?= $role['role_id'] ?>">Edit</a>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                data-target="#exampleModal_role_<?php echo $role['role_id']; ?>">
+                                                Edit
+                                            </button>
                                         </td>
                                     </tr>
+                                    <!-- Modal for role -->
+                                    <div class="modal fade" id="exampleModal_role_<?php echo $role['role_id']; ?>" tabindex="-1"
+                                        aria-labelledby="exampleModalLabelRole_<?php echo $role['role_id']; ?>"
+                                        aria-hidden="true">
+                                        <?php
+                                        $name = 'الرول';
+                                        $form_action = 'edit_role.php';
+                                        $label = 'الرول';
+                                        $input_name = 'role';
+                                        $value = $role['name'];
+                                        $id = $role['role_id'];
+                                        $submit_button_name = 'edit_role';
+                                        include 'modal_template.php';
+                                        ?>
+                                    </div>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
-                    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
-                        <h1>الموظفين</h1>
-                        <a style="float:right" href="?add_user" class="btn btn-primary">اضافة موظف</a>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">الاسم</th>
-                                    <th scope="col">القسم</th>
-                                    <th scope="col">الرول</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($users as $key => $user): ?>
-                                    <tr>
-                                        <th scope="row"><?php echo $key + 1 ?></th>
-                                        <td><?php echo $user['full_name'] ?></td>
-                                        <td><?php echo $db->DeptName($user['dept']) ?></td>
-                                        <td><?php echo $db->RoleName($user['role']) ?></td>
-                                        <td><a class="btn btn-primary" href="?edit_user&id=<?= $user['user_id'] ?>">Edit</a>
-                                        </td>
-                                        <td><a class="btn btn-danger" href="?delete_user&id=<?= $user['user_id'] ?>">Delete</a>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    </div>
+
 
                 </div>
             </div>

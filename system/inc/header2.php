@@ -1,10 +1,16 @@
+<?php
+require_once '../function/DB.php';
+$db = new DB();
+$name = $db->User($_SESSION['id']['user_id']);
+$full_name = $name['full_name'];
+?>
 <div class="sidebar_icon d-lg-none">
     <i class="ti-menu"></i>
 </div>
 <div class="serach_field-area">
     <div class="search_inner">
         <form action="#">
-        
+
         </form>
     </div>
 </div>
@@ -21,7 +27,7 @@
         <img src="assets/img/avatar/<?php echo $db->User($_SESSION['id']['user_id'])['img']; ?>" alt="#">
         <div class="profile_info_iner">
             <p><?php echo $title['name'] ?></p>
-            <h5><?php echo $_SESSION['id']['full_name'] ?></h5>
+            <h5><?php echo $full_name ?></h5>
             <div class="profile_info_details">
                 <a href="?profile">My Profile <i class="ti-user"></i></a>
                 <a href="?logout">Log Out <i class="ti-shift-left"></i></a>

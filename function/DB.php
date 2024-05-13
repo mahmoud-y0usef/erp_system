@@ -60,11 +60,11 @@ class DB
     {
         $sql = "SELECT role FROM users WHERE user_id = '$id'";
         $result = $this->Connection()->query($sql);
-        if ($result->num_rows > 0){
+        if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $sql = "SELECT * FROM role WHERE role_id = '$row[role]'";
             $result = $this->Connection()->query($sql);
-            if ($result->num_rows > 0){
+            if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
                 return $row;
             } else {
@@ -79,7 +79,7 @@ class DB
     {
         $sql = "SELECT * FROM dept where id_dept = '$id'";
         $result = $this->Connection()->query($sql);
-        if ($result->num_rows > 0){
+        if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             return $row['name'];
         } else {
@@ -91,7 +91,7 @@ class DB
     {
         $sql = "SELECT * FROM dept where id_dept = '$id'";
         $result = $this->Connection()->query($sql);
-        if ($result->num_rows > 0){
+        if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             return $row['id_dept'];
         } else {
@@ -103,7 +103,7 @@ class DB
     {
         $sql = "SELECT * FROM dept where id_dept = '$id'";
         $result = $this->Connection()->query($sql);
-        if ($result->num_rows > 0){
+        if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             return $row['name'];
         } else {
@@ -115,7 +115,7 @@ class DB
     {
         $sql = "SELECT * FROM role where role_id = '$id'";
         $result = $this->Connection()->query($sql);
-        if ($result->num_rows > 0){
+        if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             return $row['name'];
         } else {
@@ -128,9 +128,9 @@ class DB
     {
         $sql = "SELECT * FROM role";
         $result = $this->Connection()->query($sql);
-        if ($result->num_rows > 0){
+        if ($result->num_rows > 0) {
             $rows = array();
-            while ($row = $result->fetch_assoc()){
+            while ($row = $result->fetch_assoc()) {
                 $rows[] = $row;
             }
             return $rows;
@@ -143,9 +143,9 @@ class DB
     {
         $sql = "SELECT * FROM users";
         $result = $this->Connection()->query($sql);
-        if ($result->num_rows > 0){
+        if ($result->num_rows > 0) {
             $rows = array();
-            while ($row = $result->fetch_assoc()){
+            while ($row = $result->fetch_assoc()) {
                 $rows[] = $row;
             }
             return $rows;
@@ -158,9 +158,9 @@ class DB
     {
         $sql = "SELECT * FROM dept";
         $result = $this->Connection()->query($sql);
-        if ($result->num_rows > 0){
+        if ($result->num_rows > 0) {
             $rows = array();
-            while ($row = $result->fetch_assoc()){
+            while ($row = $result->fetch_assoc()) {
                 $rows[] = $row;
             }
             return $rows;
@@ -173,7 +173,7 @@ class DB
     {
         $sql = "SELECT * FROM users WHERE user_id = '$id'";
         $result = $this->Connection()->query($sql);
-        if ($result->num_rows > 0){
+        if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             return $row;
         } else {
@@ -184,6 +184,61 @@ class DB
     public function UpdateProfile($id, $full_name, $logo)
     {
         $sql = "UPDATE users SET full_name = '$full_name', img = '$logo' WHERE user_id = '$id'";
+        $result = $this->Connection()->query($sql);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function EditDept($id, $name)
+    {
+        $sql = "UPDATE dept SET name = '$name' WHERE id_dept = '$id'";
+        $result = $this->Connection()->query($sql);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function EditRole($id, $name)
+    {
+        $sql = "UPDATE role SET name = '$name' WHERE role_id = '$id'";
+        $result = $this->Connection()->query($sql);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function DelUser($id)
+    {
+        $sql = "DELETE FROM users WHERE user_id = '$id'";
+        $result = $this->Connection()->query($sql);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function EditUser_img($full_name, $email, $phone, $password, $img, $id)
+    {
+        $sql = "UPDATE users SET full_name = '$full_name', email = '$email', phone = '$phone', password = '$password', img = '$img' WHERE user_id = '$id'";
+        $result = $this->Connection()->query($sql);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function EditUser($id, $full_name, $email, $phone, $password)
+    {
+        $sql = "UPDATE users SET full_name = '$full_name', email = '$email', phone = '$phone', password = '$password' WHERE user_id = '$id'";
         $result = $this->Connection()->query($sql);
         if ($result) {
             return true;

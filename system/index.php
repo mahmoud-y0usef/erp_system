@@ -30,6 +30,8 @@
             require 'view/profile.php';
         elseif(isset($_GET['edit_profile']))
             require 'view/edit_profile.php';
+        elseif(isset($_GET['add_emp']))
+            require 'view/add_emp.php';
         else
             require 'view/mainpage.php';
     ?>
