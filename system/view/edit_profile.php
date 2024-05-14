@@ -11,6 +11,9 @@
 
             <div class="col-8">
                 <form action="function/edit_profile.php" method="post" enctype="multipart/form-data">
+                    <?php 
+                        if ($user['option_img'] == 0):
+                    ?>
                     <div class="col-3" style="position: relative;">
                         <input name="logo" type="file" id="imageInput" class="form-control" onchange="previewImage(this)"
                             style="display: none;">
@@ -24,6 +27,7 @@
                                 Choose Image</div>
                         </label>
                     </div>
+                    <?php endif; ?>
                     <div class="form-group
                     ">
                         <label for="full_name">Full Name</label>

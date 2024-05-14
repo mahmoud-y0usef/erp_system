@@ -16,11 +16,14 @@ $full_name = $name['full_name'];
 </div>
 <div class="header_right d-flex justify-content-between align-items-center">
     <div class="header_notification_warp d-flex align-items-center">
-        <li>
+        <!-- <li>
             <a href="#"> <img src="assets/img/icon/bell.svg" alt> </a>
         </li>
         <li>
             <a href="#"> <img src="assets/img/icon/msg.svg" alt> </a>
+        </li> -->
+        <li>
+            <a href="?model_tech"> نموذج طلب خدمة تقنية</a>
         </li>
     </div>
     <div class="profile_info">

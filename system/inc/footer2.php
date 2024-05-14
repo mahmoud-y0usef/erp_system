@@ -72,7 +72,7 @@
         });
 
         $(".btn-close").click(function () {
-           
+
             $('.modal').hide();
             $('.modal-backdrop').remove();
             $('body').removeClass('modal-open');
@@ -82,6 +82,20 @@
 
 
     });
+    function validateForm() {
+        var employeeName = document.getElementById("employeeName").value;
+        var jobTitle = document.getElementById("jobTitle").value;
+        var serviceOption = document.getElementById("option").value;
+
+        if (employeeName.trim() == "" || jobTitle.trim() == "" || fileInput.trim() == "" || serviceOption == "إختر خدمة") {
+            alert("يرجى تعبئة جميع الحقول واختيار الخدمة المطلوبة.");
+            return false;
+        }
+
+        window.location.href = 'notify.html';
+        localStorage.setItem('name', employeeName);
+
+    }
 
 </script>
 </body>

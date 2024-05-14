@@ -236,12 +236,65 @@ class DB
         }
     }
 
-    public function EditUser($id, $full_name, $email, $phone, $password)
+    public function EditUser($id, $full_name, $email, $phone, $password, $option_img)
     {
-        $sql = "UPDATE users SET full_name = '$full_name', email = '$email', phone = '$phone', password = '$password' WHERE user_id = '$id'";
+        $sql = "UPDATE users SET full_name = '$full_name', email = '$email', phone = '$phone', password = '$password', option_img = '$option_img' WHERE user_id = '$id'";
         $result = $this->Connection()->query($sql);
         if ($result) {
             return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public function EditUser_option_img($full_name, $email, $phone, $password, $option_img, $id)
+    {
+        $sql = "UPDATE users SET full_name = '$full_name', email = '$email', phone = '$phone', password = '$password', option_img = '$option_img' WHERE user_id = '$id'";
+        $result = $this->Connection()->query($sql);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function AddUser($id , $full_name, $email, $phone, $password, $role, $dept)
+    {
+        $sql = "INSERT INTO users (user_id , full_name, email, phone, password, role, dept) VALUES ('$id' , '$full_name', '$email', '$phone', '$password', '$role', '$dept')";
+        $result = $this->Connection()->query($sql);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function GetAllDept()
+    {
+        $sql = "SELECT * FROM dept";
+        $result = $this->Connection()->query($sql);
+        if ($result->num_rows > 0) {
+            $rows = array();
+            while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+            }
+            return $rows;
+        } else {
+            return false;
+        }
+    }
+
+    public function GetAllRole()
+    {
+        $sql = "SELECT * FROM role";
+        $result = $this->Connection()->query($sql);
+        if ($result->num_rows > 0) {
+            $rows = array();
+            while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+            }
+            return $rows;
         } else {
             return false;
         }

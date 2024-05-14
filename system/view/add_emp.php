@@ -18,6 +18,9 @@ if (isset($_GET['add_emp'])):
         <div class="modal fade" id="exampleModal_add_emp" tabindex="-1" aria-labelledby="exampleModalLabelAddEmp"
             aria-hidden="true">
             <?php
+            $add_emp = 1;
+            $edit_emp = 0;
+            $delete_emp = 0;
             $name_button = 'إضافة';
             $name = 'إضافة موظف جديد';
             $form_action = 'add_emp.php';
@@ -65,6 +68,9 @@ if (isset($_GET['add_emp'])):
                     <div class="modal fade" id="exampleModal_user_<?php echo $user['user_id']; ?>" tabindex="-1"
                         aria-labelledby="exampleModalLabelUser_<?php echo $user['user_id']; ?>" aria-hidden="true">
                         <?php
+                        $add_emp = 0;
+                        $edit_emp = 1;
+                        $delete_emp = 0;
                         $width = '150%';
                         $name_button = 'تعديل';
                         $name = 'تعديل الموظف';
@@ -82,11 +88,14 @@ if (isset($_GET['add_emp'])):
                 " id="exampleModaldel_user_<?php echo $user['user_id']; ?>" tabindex="-1"
                         aria-labelledby="exampleModalLabelDelUser_<?php echo $user['user_id']; ?>" aria-hidden="true">
                         <?php
+                        $add_emp = 0;
+                        $edit_emp = 0;
+                        $delete_emp = 1;
                         $width = '';
                         $name_button = 'حذف';
                         $name = '<i style="color:red;font-size:30" class="fa-light fa-circle-exclamation"></i> حذف الموظف';
                         $form_action = 'del_emp.php';
-                        $label = ' هل أنت متأكد من حذف الموظف'." ".' <br>'.$user['full_name'];
+                        $label = ' هل أنت متأكد من حذف الموظف' . " " . ' <br>' . $user['full_name'];
                         $input_name = '';
                         $value = '';
                         $id = $user['user_id'];
