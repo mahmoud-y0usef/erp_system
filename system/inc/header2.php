@@ -14,27 +14,50 @@ $full_name = $name['full_name'];
         </form>
     </div>
 </div>
-<div class="header_right d-flex justify-content-between align-items-center">
-    <div class="header_notification_warp d-flex align-items-center">
-        <!-- <li>
-            <a href="#"> <img src="assets/img/icon/bell.svg" alt> </a>
-        </li>
-        <li>
-            <a href="#"> <img src="assets/img/icon/msg.svg" alt> </a>
-        </li> -->
-        <li>
-            <a href="?model_tech"> نموذج طلب خدمة تقنية</a>
-        </li>
+<div class="container drob">
+    <div class="dropdown" style="background-color:#0b0d24;width: 114px;">
+        <button style="color:white;" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">النماذج
+            <span class="caret"></span></button>
+        <ul style="padding: 15px;background-color:#0b0d24" class="dropdown-menu">
+            <li class="dropdown-submenu ">
+                
+                <a class="test" tabindex="-1" href="#">تقنية المعلومات <span class="caret"></span></a>
+                <ul style="padding: 15px;background-color:#212529" class="dropdown-menu">
+                    <li><a tabindex="-1" href="#">طلب خدمة تقنية</a></li>
+                    
+                </ul>
+            </li>
+            <li class="dropdown-submenu ">
+                
+                <a class="test" tabindex="-1" href="#">الموارد البشرية<span class="caret"></span></a>
+                <ul style="padding: 15px;background-color:#212529" class="dropdown-menu">
+                    <li><a tabindex="-1" href="#">طلب إذن</a></li>
+                    
+                </ul>
+            </li>
+        </ul>
     </div>
-    <div class="profile_info">
-        <img src="assets/img/avatar/<?php echo $db->User($_SESSION['id']['user_id'])['img']; ?>" alt="#">
-        <div class="profile_info_iner">
-            <p><?php echo $title['name'] ?></p>
-            <h5><?php echo $full_name ?></h5>
-            <div class="profile_info_details">
-                <a href="?profile">My Profile <i class="ti-user"></i></a>
-                <a href="?logout">Log Out <i class="ti-shift-left"></i></a>
-            </div>
-        </div>
+    <div class="dropdown" style="background-color:#0b0d24;width: 114px;">
+        <button style="color:white;" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">معلومات عنا
+            <span class="caret"></span></button>
+        <ul style="padding: 15px;background-color:#0b0d24" class="dropdown-menu">
+            <li class="dropdown-submenu ">
+                
+                <a class="test" tabindex="-1" href="#">تواصل<span class="caret"></span></a>
+                <ul style="padding: 15px;background-color:#212529" class="dropdown-menu">
+                    <li><a tabindex="-1" href="#">test1</a></li>
+                    
+                </ul>
+            </li>
+            <li class="dropdown-submenu ">
+                
+                <a class="test" tabindex="-1" href="#">حول<span class="caret"></span></a>
+                <ul style="padding: 15px;background-color:#212529" class="dropdown-menu">
+                    <li><a tabindex="-1" href="#">test1</a></li>
+                    
+                </ul>
+            </li>
+        </ul>
     </div>
+</div>
 </div>

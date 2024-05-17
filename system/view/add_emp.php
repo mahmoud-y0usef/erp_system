@@ -43,6 +43,7 @@ if (isset($_GET['add_emp'])):
                     <th scope="col">Name</th>
                     <th scope="col">Role</th>
                     <th scope="col">Dept</th>
+                    <th scope="col"></th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -53,6 +54,7 @@ if (isset($_GET['add_emp'])):
                         <td><?php echo $user['full_name'] ?></td>
                         <td><?php echo $db->RoleName($user['role']) ?></td>
                         <td><?php echo $db->DeptName($user['dept']) ?></td>
+                        <td><img width="50px" src="assets/img/avatar/<?= $user['img'] ?>"></td>
                         <td>
                             <button style="border:none;background:none;color:green;font-size:25px" type="button"
                                 class="fa-duotone fa-pen-to-square" data-toggle="modal"

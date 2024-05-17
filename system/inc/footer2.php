@@ -66,9 +66,9 @@
             var $ul = $parent.find("ul"); // Get the UL element within the clicked .inner element
 
             // Close all UL elements except the one within the clicked .inner element
-            $(".inner ul").not($ul).slideUp(200);
+            $(".inner ul").not($ul).hide();
             // Toggle the visibility of the UL element within the clicked .inner element
-            $ul.slideToggle(200);
+            $ul.show();
         });
 
         $(".btn-close").click(function () {
@@ -78,7 +78,19 @@
             $('body').removeClass('modal-open');
         });
 
+        $active = false;
+        $('#sidebar_menu').hide();
+        $('.managers').click(function () {
+            if ($active == false) {
+                $('#sidebar_menu').show();
+                $active = true;
+            } else {
+                $('#sidebar_menu').hide();
+                $active = false;
+            }
 
+
+        })
 
 
     });
@@ -96,6 +108,12 @@
         localStorage.setItem('name', employeeName);
 
     }
+
+    $('.dropdown-submenu a.test').on("click", function (e) {
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+    });
 
 </script>
 </body>
