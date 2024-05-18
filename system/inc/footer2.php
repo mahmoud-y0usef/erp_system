@@ -115,6 +115,31 @@
         e.preventDefault();
     });
 
+
+
+    let btn = document.querySelector("#btn");
+    let sidebar = document.querySelector(".sidebar");
+    let searchBtn = document.querySelector(".bx-search");
+
+    btn.onclick = function () {
+        sidebar.classList.toggle("active");
+    }
+    searchBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+    }
+
+    // This script adds functionality to toggle the dropdown menu
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            const dropdownMenu = this.nextElementSibling;
+            dropdownMenu.classList.toggle('show');
+        });
+    });
+
+
 </script>
 </body>
 

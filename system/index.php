@@ -3,11 +3,11 @@
     require 'inc/header.php';
 ?>
 
-<nav class="sidebar">
+<!-- <nav class="sidebar"> -->
     <?php 
         require 'inc/sidebar.php';
     ?>
-</nav>
+<!-- </nav> -->
 
 
 <section class="main_content dashboard_part">
