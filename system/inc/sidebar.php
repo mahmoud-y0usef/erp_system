@@ -18,19 +18,82 @@ $role = $db->Role($_SESSION['id']['user_id']);
             </a>
             <span class="tooltip">لوحة المعلومات</span>
         </li>
-        <ul class="menu">
+
+        <ul class="drob_menu">
             <li>
                 <a href="#" class="dropdown-toggle">
-                    <i class='bx bx-command'></i>
-                    <span class="links_name">ادارة المنصة</span>
+                    <i class='bx bx-cog'></i>
+                    <span class="links_name">إعدادات المنصة</span>
                 </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Dropdown Item 1</a></li>
-                    <li><a href="#">Dropdown Item 2</a></li>
-                    <li><a href="#">Dropdown Item 3</a></li>
-                </ul>
             </li>
+            <ul class="toggle-menu">
+                <li class="top-menu">
+                    <a href="#" class="dropdown-toggle">
+                        <i class='bx bx-add-to-queue'></i>
+                        <span class="links_name">Roles</span>
+                    </a>
+                    <span class="tooltip">Roles</span>
+                </li>
+                <ul class="toggle-menu sub">
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-add-to-queue'></i>
+                            <span class="links_name">Add Role</span>
+                        </a>
+                        <span class="tooltip">Add Role</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-list-ul'></i>
+                            <span class="links_name">Role List</span>
+                        </a>
+                        <span class="tooltip">Role List</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-user-check'></i>
+                            <span class="links_name">User Asign Role</span>
+                        </a>
+                        <span class="tooltip">User Asign Role</span>
+                    </li>
+                </ul>
+                <li class="top-menu">
+                    <a href="#" class="dropdown-toggle">
+                        <i class='bx bx-add-to-queue'></i>
+                        <span class="links_name">Dept</span>
+                    </a>
+                    <span class="tooltip">Dept</span>
+                </li>
+                <ul class="toggle-menu sub">
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-add-to-queue'></i>
+                            <span class="links_name">Add Dept</span>
+                        </a>
+                        <span class="tooltip">Add Dept</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-list-ul'></i>
+                            <span class="links_name">Dept List</span>
+                        </a>
+                        <span class="tooltip">Dept List</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-user-check'></i>
+                            <span class="links_name">User Asign Dept</span>
+                        </a>
+                        <span class="tooltip">User Asign Dept</span>
+                    </li>
+                </ul>
+            </ul>
+
+
+
+
         </ul>
+
         <li>
             <a href="#">
                 <i class='bx bx-stats'></i>
@@ -59,3 +122,13 @@ $role = $db->Role($_SESSION['id']['user_id']);
         </div>
     </div>
 </div>
+
+<script>
+    document.querySelectorAll('.dropdown-toggle').forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (e) {
+            e.preventDefault();
+            let toggleMenu = dropdown.parentElement.nextElementSibling;
+            toggleMenu.classList.toggle('active');
+        });
+    });
+</script>

@@ -7566,3 +7566,29 @@ a {
 a:hover {
     color: #000;
 }
+
+.toggle-menu{
+    color: white;
+    display: none;
+}
+
+.toggle-menu li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    margin: 0px;
+    padding: 0px;
+}
+
+.toggle-menu.active {
+    display: block;
+}
+
+.toggle-menu li{
+    margin-left: 70px;
+}
+
+.top-menu{
+    right: 36px;
+}

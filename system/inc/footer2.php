@@ -56,6 +56,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script>
     $(function () {
         $(".inner ul").hide(); // Initially hide all UL elements
@@ -93,7 +95,12 @@
         })
 
 
+
+
+
+
     });
+
     function validateForm() {
         var employeeName = document.getElementById("employeeName").value;
         var jobTitle = document.getElementById("jobTitle").value;
@@ -119,25 +126,41 @@
 
     let btn = document.querySelector("#btn");
     let sidebar = document.querySelector(".sidebar");
-    let searchBtn = document.querySelector(".bx-search");
+    let bar = document.querySelector(".nav_list");
 
+    // التعامل مع النقر على زر الشريط الجانبي
     btn.onclick = function () {
         sidebar.classList.toggle("active");
-    }
-    searchBtn.onclick = function () {
-        sidebar.classList.toggle("active");
+        closeAllDropdowns();
     }
 
-    // This script adds functionality to toggle the dropdown menu
-    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    // التعامل مع النقر على الشريط الجانبي
+    bar.onclick = function () {
+        sidebar.classList.add("active");
+    }
 
-    dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', function (e) {
-            e.preventDefault();
-            const dropdownMenu = this.nextElementSibling;
-            dropdownMenu.classList.toggle('show');
+    // دالة لإغلاق جميع القوائم المنسدلة
+    function closeAllDropdowns() {
+        let dropdowns = document.querySelectorAll(".toggle-menu.active");
+        dropdowns.forEach(function (dropdown) {
+            dropdown.classList.remove("active");
         });
-    });
+    }
+
+
+
+
+
+    // // This script adds functionality to toggle the dropdown menu
+    // const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+    // dropdownToggles.forEach(toggle => {
+    //     toggle.addEventListener('click', () => {
+    //         toggle.parentElement.querySelector('.toggle-menu').classList.toggle('active');
+    //     });
+    // });
+
+
 
 
 </script>
