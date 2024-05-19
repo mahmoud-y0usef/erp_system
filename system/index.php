@@ -34,6 +34,14 @@
             require 'view/add_emp.php';
         elseif(isset($_GET['model_tech']))
             require 'view/model_tech.php';
+        elseif (isset($_GET['add_role'])) {
+            require 'view/add_role.php';
+        }
+        elseif (isset($_GET['add_dept'])) {
+            require 'view/add_dept.php';
+        }elseif (isset($_GET['role_list'])) {
+            require 'view/role_list.php';
+        }
         else
             require 'view/mainpage.php';
     ?>

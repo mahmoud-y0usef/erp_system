@@ -94,8 +94,9 @@
 
         })
 
-
-
+        $('.top-menu').click(function () {
+            $(this).find('.dropdown-toggle').toggleClass('arrow-left');
+        });
 
 
 
@@ -146,19 +147,6 @@
             dropdown.classList.remove("active");
         });
     }
-
-
-
-
-
-    // // This script adds functionality to toggle the dropdown menu
-    // const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-
-    // dropdownToggles.forEach(toggle => {
-    //     toggle.addEventListener('click', () => {
-    //         toggle.parentElement.querySelector('.toggle-menu').classList.toggle('active');
-    //     });
-    // });
 
 
 

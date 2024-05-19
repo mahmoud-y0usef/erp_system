@@ -11,6 +11,7 @@ $role = $db->Role($_SESSION['id']['user_id']);
         <i class='bx bx-menu' id="btn"></i>
     </div>
     <ul class="nav_list">
+        <?php if($role['role_id'] == 14): ?>
         <li>
             <a href="#">
                 <i class='bx bxs-info-circle'></i>
@@ -36,14 +37,14 @@ $role = $db->Role($_SESSION['id']['user_id']);
                 </li>
                 <ul class="toggle-menu sub">
                     <li>
-                        <a href="#">
+                        <a href="?add_role">
                             <i class='bx bx-add-to-queue'></i>
                             <span class="links_name">Add Role</span>
                         </a>
                         <span class="tooltip">Add Role</span>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="?role_list">
                             <i class='bx bx-list-ul'></i>
                             <span class="links_name">Role List</span>
                         </a>
@@ -66,7 +67,7 @@ $role = $db->Role($_SESSION['id']['user_id']);
                 </li>
                 <ul class="toggle-menu sub">
                     <li>
-                        <a href="#">
+                        <a href="?add_dept">
                             <i class='bx bx-add-to-queue'></i>
                             <span class="links_name">Add Dept</span>
                         </a>
@@ -96,6 +97,13 @@ $role = $db->Role($_SESSION['id']['user_id']);
 
         <li>
             <a href="#">
+                <i class='bx bx-chat'></i>
+                <span class="links_name">الرسائل</span>
+            </a>
+            <span class="tooltip">الرسائل</span>
+        </li>
+        <li>
+            <a href="#">
                 <i class='bx bx-stats'></i>
                 <span class="links_name">الاحصائيات</span>
             </a>
@@ -108,6 +116,7 @@ $role = $db->Role($_SESSION['id']['user_id']);
             </a>
             <span class="tooltip">ادارة الملفات</span>
         </li>
+        <?php endif; ?>
     </ul>
     <div class="content">
         <div class="user">

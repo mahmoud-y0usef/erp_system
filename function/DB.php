@@ -259,7 +259,7 @@ class DB
         }
     }
 
-    public function AddUser($id , $full_name, $email, $phone, $password, $role, $dept)
+    public function AddUser($id, $full_name, $email, $phone, $password, $role, $dept)
     {
         $sql = "INSERT INTO users (user_id , full_name, email, phone, password, role, dept) VALUES ('$id' , '$full_name', '$email', '$phone', '$password', '$role', '$dept')";
         $result = $this->Connection()->query($sql);
@@ -299,5 +299,96 @@ class DB
             return false;
         }
     }
+
+    public function GetAllCommittees()
+    {
+        $sql = "SELECT * FROM committees";
+        $result = $this->Connection()->query($sql);
+        if ($result->num_rows > 0) {
+            $rows = array();
+            while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+            }
+            return $rows;
+        } else {
+            return false;
+        }
+    }
+
+
+    public function AddRole($name, $committees)
+    {
+        // check if role already exists
+        $sql = "SELECT * FROM role WHERE name = '$name'";
+        $result = $this->Connection()->query($sql);
+        if ($result->num_rows > 0) {
+            return false;
+        } else {
+            $sql = "INSERT INTO role (name, committees) VALUES ('$name', '$committees')";
+            $result = $this->Connection()->query($sql);
+            if ($result) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public function AddDept($name)
+    {
+        // check if dept already exists
+        $sql = "SELECT * FROM dept WHERE name = '$name'";
+        $result = $this->Connection()->query($sql);
+        if ($result->num_rows > 0) {
+            return false;
+        } else {
+            $sql = "INSERT INTO dept (name) VALUES ('$name')";
+            $result = $this->Connection()->query($sql);
+            if ($result) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public function GetRolePage($offset, $limit)
+    {
+        $sql = "SELECT * FROM role LIMIT $offset, $limit";
+        $result = $this->Connection()->query($sql);
+        if ($result->num_rows > 0) {
+            $rows = array();
+            while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+            }
+            return $rows;
+        } else {
+            return false;
+        }
+    }
+
+    public function DeleteRole($role_id)
+    {
+        $sql = "DELETE FROM role WHERE role_id = '$role_id'";
+        $result = $this->Connection()->query($sql);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public function UpdateRole($role_id, $role_name, $committee_id)
+    {
+        $sql = "UPDATE role SET name = '$role_name', committees = '$committee_id' WHERE role_id = '$role_id'";
+        $result = $this->Connection()->query($sql);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
 ?>

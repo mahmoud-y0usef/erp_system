@@ -7567,12 +7567,12 @@ a:hover {
     color: #000;
 }
 
-.toggle-menu{
+.toggle-menu {
     color: white;
     display: none;
 }
 
-.toggle-menu li{
+.toggle-menu li {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7585,10 +7585,37 @@ a:hover {
     display: block;
 }
 
-.toggle-menu li{
+.toggle-menu li {
     margin-left: 70px;
 }
 
-.top-menu{
+.top-menu {
     right: 36px;
 }
+
+
+
+
+.box form {
+    padding: 10px 5px;
+}
+
+.box form label  , .box form input  , .box form select{
+    display: inline-block;
+    margin: 5px;
+}
+
+.box form input , .box form select {
+    width: 250px;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200;
+    height: 400px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+

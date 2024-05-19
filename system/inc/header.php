@@ -65,6 +65,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css"
         integrity="sha512-cn16Qw8mzTBKpu08X0fwhTSv02kK/FojjNLz0bwp2xJ4H+yalwzXKFw/5cLzuBZCxGWIA+95X4skzvo8STNtSg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        /* CSS for the left arrow */
+        .arrow-left::after {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: .255em;
+            vertical-align: .255em;
+            content: "";
+            border-top: .3em solid;
+            border-right: .3em solid transparent;
+            border-bottom: 0;
+            border-left: .3em solid transparent;
+            transform: rotate(90deg);
+        }
+    </style>
 </head>
 
 <body class="crm_body_bg"></body>
