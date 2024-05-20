@@ -367,9 +367,35 @@ class DB
         }
     }
 
+    public function GetDeptPage($offset, $limit)
+    {
+        $sql = "SELECT * FROM dept LIMIT $offset, $limit";
+        $result = $this->Connection()->query($sql);
+        if ($result->num_rows > 0) {
+            $rows = array();
+            while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+            }
+            return $rows;
+        } else {
+            return false;
+        }
+    }
+
     public function DeleteRole($role_id)
     {
         $sql = "DELETE FROM role WHERE role_id = '$role_id'";
+        $result = $this->Connection()->query($sql);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function DeleteDept($dept_id)
+    {
+        $sql = "DELETE FROM dept WHERE id_dept = '$dept_id'";
         $result = $this->Connection()->query($sql);
         if ($result) {
             return true;
@@ -382,6 +408,39 @@ class DB
     public function UpdateRole($role_id, $role_name, $committee_id)
     {
         $sql = "UPDATE role SET name = '$role_name', committees = '$committee_id' WHERE role_id = '$role_id'";
+        $result = $this->Connection()->query($sql);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function Updatedept($dept_id, $dept_name)
+    {
+        $sql = "UPDATE dept SET name = '$dept_name' WHERE id_dept = '$dept_id'";
+        $result = $this->Connection()->query($sql);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function EditUserRole($user_id, $role_id)
+    {
+        $sql = "UPDATE users SET role = '$role_id' WHERE user_id = '$user_id'";
+        $result = $this->Connection()->query($sql);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function EditUserDept($user_id, $dept_id)
+    {
+        $sql = "UPDATE users SET dept = '$dept_id' WHERE user_id = '$user_id'";
         $result = $this->Connection()->query($sql);
         if ($result) {
             return true;

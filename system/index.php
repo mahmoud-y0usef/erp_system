@@ -41,6 +41,12 @@
             require 'view/add_dept.php';
         }elseif (isset($_GET['role_list'])) {
             require 'view/role_list.php';
+        }elseif (isset($_GET['dept_list'])) {
+            require 'view/dept_list.php';
+        }elseif (isset($_GET['user_asign_role'])) {
+            require 'view/user_asign_role.php';
+        }elseif(isset($_GET['user_asign_dept'])){
+            require 'view/user_asign_dept.php';
         }
         else
             require 'view/mainpage.php';

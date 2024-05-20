@@ -128,16 +128,18 @@
     let btn = document.querySelector("#btn");
     let sidebar = document.querySelector(".sidebar");
     let bar = document.querySelector(".nav_list");
-
+    let namejobs = document.querySelector(".name_job");
     // التعامل مع النقر على زر الشريط الجانبي
     btn.onclick = function () {
         sidebar.classList.toggle("active");
+        namejobs.classList.toggle("active");
         closeAllDropdowns();
     }
-
+    
     // التعامل مع النقر على الشريط الجانبي
     bar.onclick = function () {
         sidebar.classList.add("active");
+        namejobs.classList.add("active");
     }
 
     // دالة لإغلاق جميع القوائم المنسدلة

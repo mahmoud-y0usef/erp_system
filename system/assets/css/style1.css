@@ -7425,7 +7425,7 @@ nav input {
 .sidebar .content {
     position: absolute;
     color: var(--white-color);
-    bottom: 0;
+    top: 121px;
     left: 0;
     width: 100%;
 }
@@ -7438,9 +7438,7 @@ nav input {
     transition: all 0.4s ease;
 }
 
-.sidebar.active .content .user {
-    background: var(--light-black);
-}
+
 
 .content .user .user_details {
     display: flex;
@@ -7454,17 +7452,27 @@ nav input {
 .sidebar.active .user .user_details {
     opacity: 1;
     pointer-events: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .content .user .user_details img {
-    height: 45px;
-    width: 45px;
+    height: 80px;
+    width: 80px;
     object-fit: cover;
     border-radius: 12px;
 }
 
 .name_job {
     margin-left: 10px;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 11px;
+    display: none;
+}
+
+.name_job.active {
+    display: block;
 }
 
 .user_details .name {
@@ -7474,6 +7482,7 @@ nav input {
 
 .user_details .job {
     font-size: 12px;
+
 }
 
 #log_out {
@@ -7600,16 +7609,19 @@ a:hover {
     padding: 10px 5px;
 }
 
-.box form label  , .box form input  , .box form select{
+.box form label,
+.box form input,
+.box form select {
     display: inline-block;
     margin: 5px;
 }
 
-.box form input , .box form select {
+.box form input,
+.box form select {
     width: 250px;
 }
 
-.box{
+.box {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7619,3 +7631,12 @@ a:hover {
     border-radius: 10px;
 }
 
+.lis {
+    margin-top: 205px;
+}
+
+.job {
+    margin-top: 10px;
+    color: lightgreen;
+    text-shadow: .1px .1px 3px lightgreen;
+}
