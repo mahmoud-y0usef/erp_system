@@ -225,9 +225,9 @@ class DB
         }
     }
 
-    public function EditUser_img($full_name, $email, $phone, $password, $img, $id)
+    public function EditUser_img($email, $password, $img, $id)
     {
-        $sql = "UPDATE users SET full_name = '$full_name', email = '$email', phone = '$phone', password = '$password', img = '$img' WHERE user_id = '$id'";
+        $sql = "UPDATE users SET  email = '$email',  password = '$password', img = '$img' WHERE user_id = '$id'";
         $result = $this->Connection()->query($sql);
         if ($result) {
             return true;
@@ -236,9 +236,9 @@ class DB
         }
     }
 
-    public function EditUser($id, $full_name, $email, $phone, $password, $option_img)
+    public function EditUser($id, $email,  $password, $option_img)
     {
-        $sql = "UPDATE users SET full_name = '$full_name', email = '$email', phone = '$phone', password = '$password', option_img = '$option_img' WHERE user_id = '$id'";
+        $sql = "UPDATE users SET  email = '$email',  password = '$password', option_img = '$option_img' WHERE user_id = '$id'";
         $result = $this->Connection()->query($sql);
         if ($result) {
             return true;
@@ -248,9 +248,9 @@ class DB
     }
 
 
-    public function EditUser_option_img($full_name, $email, $phone, $password, $option_img, $id)
+    public function EditUser_option_img($email,  $password, $option_img, $id)
     {
-        $sql = "UPDATE users SET full_name = '$full_name', email = '$email', phone = '$phone', password = '$password', option_img = '$option_img' WHERE user_id = '$id'";
+        $sql = "UPDATE users SET  email = '$email',  password = '$password', option_img = '$option_img' WHERE user_id = '$id'";
         $result = $this->Connection()->query($sql);
         if ($result) {
             return true;
@@ -444,6 +444,32 @@ class DB
         $result = $this->Connection()->query($sql);
         if ($result) {
             return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function Add_User($name, $email, $password, $address, $id)
+    {
+        $sql = "INSERT INTO users SET full_name = '$name', email = '$email', password = '$password', address = '$address', user_id = '$id'";
+        $result = $this->Connection()->query($sql);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function GetUserPage($offset, $limit)
+    {
+        $sql = "SELECT * FROM users LIMIT $offset, $limit";
+        $result = $this->Connection()->query($sql);
+        if ($result->num_rows > 0) {
+            $rows = array();
+            while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+            }
+            return $rows;
         } else {
             return false;
         }

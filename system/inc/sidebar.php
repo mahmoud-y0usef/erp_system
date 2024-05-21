@@ -111,6 +111,36 @@ $role = $db->Role($_SESSION['id']['user_id']);
 
                 </ul>
 
+                <ul class="drob_menu">
+                    <li>
+                        <a href="#" class="dropdown-toggle">
+                            <i class='bx bxs-user' ></i>
+                            <span class="links_name">المستخدمين</span>
+                        </a>
+                    </li>
+                    <ul class="toggle-menu">
+                        <li>
+                            <a href="?add_user">
+                                <i class='bx bx-user-plus'></i>
+                                <span class="links_name">إضافة مستخدم</span>
+                            </a>
+                            <span class="tooltip">إضافة مستخدم</span>
+                        </li>
+                        
+                        <li>
+                            <a href="?user_list">
+                                <i class='bx bxs-user-account' ></i>
+                                <span class="links_name">إدارة المستخدمين</span>
+                            </a>
+                            <span class="tooltip">إدارة المستخدمين</span>
+                        </li>
+                        
+                    </ul>
+
+
+
+
+                </ul>
                 <li>
                     <a href="#">
                         <i class='bx bx-chat'></i>

@@ -86,3 +86,13 @@
 </head>
 
 <body class="crm_body_bg"></body>
+
+    <!-- Loader-->
+    <div id="page-preloader">
+        <div class="preloader-1">
+            <div class="loader-text">Loading</div>
+            <span ><i class="fa-sharp fa-regular fa-waveform-lines"></i></span>
+        </div>
+
+    </div>
+    <!-- Loader end-->

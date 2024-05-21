@@ -135,7 +135,7 @@
         namejobs.classList.toggle("active");
         closeAllDropdowns();
     }
-    
+
     // التعامل مع النقر على الشريط الجانبي
     bar.onclick = function () {
         sidebar.classList.add("active");
@@ -149,7 +149,14 @@
             dropdown.classList.remove("active");
         });
     }
+    /////////////////////////////////////////////////////////////////
+    // Preloader
+    /////////////////////////////////////////////////////////////////
 
+    var $preloader = $('#page-preloader'),
+        $spinner = $preloader.find('.spinner-loader');
+    $spinner.fadeOut();
+    $preloader.delay(250).fadeOut('slow');
 
 
 

@@ -47,6 +47,10 @@
             require 'view/user_asign_role.php';
         }elseif(isset($_GET['user_asign_dept'])){
             require 'view/user_asign_dept.php';
+        }elseif (isset($_GET['add_user'])) {
+            require 'view/add_user.php';
+        }elseif (isset($_GET['user_list'])) {
+            require 'view/user_list.php';
         }
         else
             require 'view/mainpage.php';
