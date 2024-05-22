@@ -87,12 +87,54 @@
 
 <body class="crm_body_bg"></body>
 
-    <!-- Loader-->
-    <div id="page-preloader">
-        <div class="preloader-1">
-            <div class="loader-text">Loading</div>
-            <span ><i class="fa-sharp fa-regular fa-waveform-lines"></i></span>
-        </div>
-
+<!-- Loader-->
+<div id="page-preloader">
+    <div class="preloader-1">
+        <div class="loader-text">Loading</div>
+        <span><i class="fa-sharp fa-regular fa-waveform-lines"></i></span>
     </div>
-    <!-- Loader end-->
+
+</div>
+<!-- Loader end-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background:#11101d !important">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="justify-content: end;">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#">التقارير</a>
+            <a class="nav-item nav-link" href="#">النماذج</a>
+            <a class="nav-item nav-link" href="#">الإدارة</a>
+            <a class="nav-item nav-link active" href="#">الرئيسية</a>
+
+            <!-- Notification Dropdown -->
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownNotification" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i style="font-size:25px;color:white" class='bx bxs-bell'></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownNotification">
+                    <a class="dropdown-item" href="#">Notification 1</a>
+                    <a class="dropdown-item" href="#">Notification 2</a>
+                    <a class="dropdown-item" href="#">Notification 3</a>
+                </div>
+            </div>
+
+            <!-- Profile Dropdown -->
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProfile" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i style="font-size:25px;color:white" class='bx bx-user-circle'></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                    <a class="dropdown-item" href="?edit_profile">Profile</a>
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="?logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

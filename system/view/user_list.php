@@ -63,7 +63,9 @@ if (isset($_GET['user_list']) && $role['role_id'] == 14):
                             echo '<td>' . $db->RoleName($user['role']) . '</td>';
                             echo '<td>';
                             echo '<button type="button" name="update" id="' . $user['user_id'] . '" class="btn btn-warning btn-xs update" data-toggle="modal" data-target="#updateModal" data-rolename="' . $user['email'] . '" data-lock="' . $user['option_img'] . '">Update</button>&nbsp;&nbsp;';
-                            echo '<button type="button" name="delete" id="' . $user['user_id'] . '" class="btn btn-danger btn-xs delete" data-toggle="modal" data-target="#deleteModal">Delete</button>';
+                            if($user['role'] != 14):
+                                echo '<button type="button" name="delete" id="' . $user['user_id'] . '" class="btn btn-danger btn-xs delete" data-toggle="modal" data-target="#deleteModal">Delete</button>';
+                            endif;
                             echo '</td>';
                             echo '</tr>';
                             $id++;

@@ -19,7 +19,6 @@ $role = $db->Role($_SESSION['id']['user_id']);
                 <div class="name"><?= $name['full_name'] ?></div>
                 <div class="job">🟢 <span class="job_name_"><?= $role['name'] ?></span></div>
             </div>
-            <a style="color:white" href="?logout"><i class='bx bx-log-out' id="log_out"> </i></a>
 
         </div>
     </div>
