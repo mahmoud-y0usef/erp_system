@@ -12,17 +12,7 @@
 
 <section class="main_content dashboard_part">
 
-    <div class="container-fluid g-0">
-        <div class="row">
-            <div class="col-lg-12 p-0">
-                <div class="header_iner d-flex justify-content-between align-items-center">
-                   <?php 
-                        require 'inc/header2.php';
-                   ?>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <?php 
         if(isset($_GET['admin_panel']))
             require 'view/admin_panel.php';
