@@ -57,7 +57,6 @@
 
     <link rel="stylesheet" href="assets/css/metisMenu.css">
 
-    <link rel="stylesheet" href="assets/css/style1.css" />
     <link rel="stylesheet" href="assets/css/colors/default.css" id="colorSkinCSS">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -66,6 +65,7 @@
         integrity="sha512-cn16Qw8mzTBKpu08X0fwhTSv02kK/FojjNLz0bwp2xJ4H+yalwzXKFw/5cLzuBZCxGWIA+95X4skzvo8STNtSg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="assets/css/style1.css" />
 
     <style>
         /* CSS for the left arrow */
@@ -81,7 +81,11 @@
             border-bottom: 0;
             border-left: .3em solid transparent;
             transform: rotate(90deg);
+
+
         }
+
+        
     </style>
 </head>
 
@@ -97,12 +101,12 @@
 </div>
 <!-- Loader end-->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background:#11101d !important">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="justify-content: end;">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="justify-content: end;text-align:center">
         <div class="navbar-nav">
             <a class="nav-item nav-link" href="#">التقارير</a>
             <a class="nav-item nav-link" href="#">النماذج</a>
@@ -111,9 +115,9 @@
 
             <!-- Notification Dropdown -->
             <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownNotification" role="button"
+                <a class="nav-link ico dropdown-toggle" href="#" id="navbarDropdownNotification" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i style="font-size:25px;color:white" class='bx bxs-bell'></i>
+                    <i style="font-size:25px;" class='bx bxs-bell'></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownNotification">
                     <a class="dropdown-item" href="#">Notification 1</a>
@@ -124,9 +128,9 @@
 
             <!-- Profile Dropdown -->
             <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProfile" role="button"
+                <a class="nav-link ico dropdown-toggle" href="#" id="navbarDropdownProfile" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i style="font-size:25px;color:white" class='bx bx-user-circle'></i>
+                    <i style="font-size:25px;" class='bx bx-user-circle'></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
                     <a class="dropdown-item" href="?edit_profile">Profile</a>
@@ -135,6 +139,8 @@
                     <a class="dropdown-item" href="?logout">Logout</a>
                 </div>
             </div>
+            <a class="nav-item nav-link theme" href="#"><i class='bx bxs-moon' style="font-size:20px"></i></a>
         </div>
     </div>
 </nav>
+<br><br>

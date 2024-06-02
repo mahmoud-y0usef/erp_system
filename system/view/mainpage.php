@@ -3,7 +3,7 @@
             <div class="row justify-content-center">
                 
                 <div class="col-lg-12">
-                   <img src="assets/img/struct.png">
+                   <img style="width:100%" src="assets/img/struct.png">
                 </div>
             </div>
         </div>

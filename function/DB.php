@@ -236,7 +236,7 @@ class DB
         }
     }
 
-    public function EditUser($id, $email,  $password, $option_img)
+    public function EditUser($id, $email, $password, $option_img)
     {
         $sql = "UPDATE users SET  email = '$email',  password = '$password', option_img = '$option_img' WHERE user_id = '$id'";
         $result = $this->Connection()->query($sql);
@@ -248,7 +248,7 @@ class DB
     }
 
 
-    public function EditUser_option_img($email,  $password, $option_img, $id)
+    public function EditUser_option_img($email, $password, $option_img, $id)
     {
         $sql = "UPDATE users SET  email = '$email',  password = '$password', option_img = '$option_img' WHERE user_id = '$id'";
         $result = $this->Connection()->query($sql);

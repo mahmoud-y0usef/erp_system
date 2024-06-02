@@ -6808,11 +6808,10 @@ ul {
 
 
 
-.nav {
-    position: fixed;
+.navbar {
+    position: fixed !important;
     z-index: 99;
     width: 100%;
-    background-color: #0b0d24 !important;
 }
 
 .nav .wrapper {
@@ -7852,5 +7851,37 @@ a:hover {
 }
 
 .nav-item{
+    color: black;
+}
+.ico i{
+    color: black;
+}
+
+.bxs-sun{
+    color: yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* dark theme */
+.dark-theme .navbar{
+    background: #11101d !important;
+
+}
+.dark-theme .nav-item{
     color: white !important;
 }
+
+.dark-theme .ico i{
+    color: white !important;
+}   

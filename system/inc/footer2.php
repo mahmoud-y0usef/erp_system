@@ -124,13 +124,44 @@
     });
 
 
+   
 
     let btn = document.querySelector("#btn");
     let sidebar = document.querySelector(".sidebar");
     let bar = document.querySelector(".nav_list");
     let namejobs = document.querySelector(".name_job");
-    // التعامل مع النقر على زر الشريط الجانبي
-    btn.onclick = function () {
+    let themeButton = document.querySelector(".theme");
+    let bol_theme = localStorage.getItem('theme') === 'dark';
+
+    if (bol_theme) {
+        $(".theme i").addClass("bxs-sun");
+        document.body.classList.add('dark-theme');
+    } else {
+        $(".theme i").removeClass("bxs-sun");
+        document.body.classList.remove('dark-theme');
+    }
+
+    themeButton.addEventListener('click', function () {
+        $(".theme i").toggleClass("bxs-sun");
+        bol_theme = !bol_theme;
+        if (bol_theme) {
+            document.body.classList.add('dark-theme');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove('dark-theme');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+    // دالة لإغلاق جميع القوائم المنسدلة
+    function closeAllDropdowns() {
+        let dropdowns = document.querySelectorAll(".toggle-menu.active");
+        dropdowns.forEach(function (dropdown) {
+            dropdown.classList.remove("active");
+        });
+    }
+
+     // التعامل مع النقر على زر الشريط الجانبي
+     btn.onclick = function () {
         sidebar.classList.toggle("active");
         namejobs.classList.toggle("active");
         closeAllDropdowns();
@@ -140,14 +171,6 @@
     bar.onclick = function () {
         sidebar.classList.add("active");
         namejobs.classList.add("active");
-    }
-
-    // دالة لإغلاق جميع القوائم المنسدلة
-    function closeAllDropdowns() {
-        let dropdowns = document.querySelectorAll(".toggle-menu.active");
-        dropdowns.forEach(function (dropdown) {
-            dropdown.classList.remove("active");
-        });
     }
     /////////////////////////////////////////////////////////////////
     // Preloader
