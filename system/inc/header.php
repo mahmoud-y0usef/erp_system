@@ -70,7 +70,10 @@
 
 
         }
-
+        #nav-form{
+            position: absolute;
+            right: 195px;
+        }
         
     </style>
 </head>
@@ -95,22 +98,25 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="justify-content: end;text-align:center">
         <div class="navbar-nav">
             <a class="nav-item nav-link" href="#">التقارير</a>
-            <a class="nav-item nav-link" href="#">النماذج</a>
+
+
+
             <a class="nav-item nav-link" href="#">الإدارة</a>
             <a class="nav-item nav-link active" href="#">الرئيسية</a>
-
-            <!-- Notification Dropdown -->
+            <!-- forms -->
             <div class="nav-item dropdown">
-                <a class="nav-link ico dropdown-toggle" href="#" id="navbarDropdownNotification" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i style="font-size:25px;" class='bx bxs-bell'></i>
+                <a class="nav-link dropdown-toggle" href="#" id="nav-form" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+                    النماذج
                 </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownNotification">
-                    <a class="dropdown-item" href="#">Notification 1</a>
-                    <a class="dropdown-item" href="#">Notification 2</a>
-                    <a class="dropdown-item" href="#">Notification 3</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownNotification"
+                    style="background-color: white; border: none; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); left: auto; right: 60px;">
+                    <a class="dropdown-item" href="view\forms\hr_form.php" style="font-weight: bold; margin-top: 10px;">HR</a>
+                    <a class="dropdown-item" href="view\forms\it_form.php" style="font-weight: bold; margin-top: 10px;">IT</a>
                 </div>
             </div>
+
+
 
             <!-- Profile Dropdown -->
             <div class="nav-item dropdown">
