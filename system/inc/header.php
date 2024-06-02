@@ -28,44 +28,30 @@
     <title>ERP | <?php echo $title['name'] ?></title>
     <link rel="icon" href="assets/img/club-logo.png" type="image/png">
 
-    <link rel="stylesheet" href="assets/css/bootstrap1.min.css" />
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap1.min.css" /> -->
 
-    <link rel="stylesheet" href="assets/vendors/themefy_icon/themify-icons.css" />
+    <!-- <link rel="stylesheet" href="assets/vendors/themefy_icon/themify-icons.css" /> -->
 
-    <link rel="stylesheet" href="assets/vendors/swiper_slider/css/swiper.min.css" />
+    <!-- <link rel="stylesheet" href="assets/vendors/swiper_slider/css/swiper.min.css" /> -->
 
-    <link rel="stylesheet" href="assets/vendors/select2/css/select2.min.css" />
+    <!-- <link rel="stylesheet" href="assets/vendors/select2/css/select2.min.css" /> -->
 
-    <link rel="stylesheet" href="assets/vendors/niceselect/css/nice-select.css" />
+    <!-- <link rel="stylesheet" href="assets/vendors/niceselect/css/nice-select.css" /> -->
 
-    <link rel="stylesheet" href="assets/vendors/owl_carousel/css/owl.carousel.css" />
+    <!-- <link rel="stylesheet" href="assets/vendors/owl_carousel/css/owl.carousel.css" /> -->
 
-    <link rel="stylesheet" href="assets/vendors/gijgo/gijgo.min.css" />
+    <!-- <link rel="stylesheet" href="assets/vendors/gijgo/gijgo.min.css" /> -->
 
     <link rel="stylesheet" href="assets/vendors/font_awesome/css/all.min.css" />
-    <link rel="stylesheet" href="assets/vendors/tagsinput/tagsinput.css" />
+    
 
-    <link rel="stylesheet" href="assets/vendors/datatable/css/jquery.dataTables.min.css" />
-    <link rel="stylesheet" href="assets/vendors/datatable/css/responsive.dataTables.min.css" />
-    <link rel="stylesheet" href="assets/vendors/datatable/css/buttons.dataTables.min.css" />
-
-    <link rel="stylesheet" href="assets/vendors/text_editor/summernote-bs4.css" />
-
-    <link rel="stylesheet" href="assets/vendors/morris/morris.css">
-
-    <link rel="stylesheet" href="assets/vendors/material_icon/material-icons.css" />
-
-    <link rel="stylesheet" href="assets/css/metisMenu.css">
-
-    <link rel="stylesheet" href="assets/css/colors/default.css" id="colorSkinCSS">
+    <link rel="stylesheet" href="assets/css/style1.css" />
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v6.2.0/css/pro.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v6.2.0/css/pro.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css"
         integrity="sha512-cn16Qw8mzTBKpu08X0fwhTSv02kK/FojjNLz0bwp2xJ4H+yalwzXKFw/5cLzuBZCxGWIA+95X4skzvo8STNtSg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" href="assets/css/style1.css" />
 
     <style>
         /* CSS for the left arrow */

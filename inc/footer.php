@@ -1,6 +1,7 @@
 <script src="assets/js/jquery1-3.4.1.min.js"></script>
 
 <script>
+    document.getElementById("indeterminate").indeterminate = true;
 
     $(function () {
         $bol = false;
@@ -19,6 +20,7 @@
             // $('.password').attr('type') == 'password' ? $(this).next('input').attr('type', 'text') : $(this).next('input').attr('type', 'password');
             
         });
+
     });
 
 </script>
