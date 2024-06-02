@@ -449,9 +449,9 @@ class DB
         }
     }
 
-    public function Add_User($name, $email, $password, $address, $id)
+    public function Add_User($name, $email, $password, $address, $id, $dept_id, $role_id)
     {
-        $sql = "INSERT INTO users SET full_name = '$name', email = '$email', password = '$password', address = '$address', user_id = '$id'";
+        $sql = "INSERT INTO users SET full_name = '$name', email = '$email', password = '$password', address = '$address', user_id = '$id', dept = '$dept_id', role = '$role_id'";
         $result = $this->Connection()->query($sql);
         if ($result) {
             return true;
@@ -459,6 +459,7 @@ class DB
             return false;
         }
     }
+    
 
     public function GetUserPage($offset, $limit)
     {
