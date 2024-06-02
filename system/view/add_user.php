@@ -1,5 +1,8 @@
 <?php
 if (isset($_GET['add_user']) && $_SESSION['id']['role'] == 14):
+    $allDepts = $db->GetAllDept();
+    $allRoles = $db->GetAllRole();
+    
     ?>
 
     <nav aria-label="breadcrumb">
@@ -57,6 +60,29 @@ if (isset($_GET['add_user']) && $_SESSION['id']['role'] == 14):
                     <input type="text" id="phone" name="phone" class="form-control" required>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-6">
+                    <label for="dept">القسم</label>
+                    <br>
+                    <select id="dept" name="dept" class="form-control" required>
+                        <option value="" selected disabled>-- اختر --</option>
+                        <?php foreach ($allDepts as $dept): ?>
+                            <option value="<?php echo $dept['id_dept']; ?>"><?php echo $dept['name']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <div class="col-6">
+                    <label for="position">المنصب</label>
+                    <br>
+                    <select id="position" name="position" class="form-control" required>
+                        <option value="" selected disabled>-- اختر --</option>
+                        <?php foreach ($allRoles as $role): ?>
+                            <option value="<?php echo $role['role_id']; ?>"><?php echo $role['name']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
             <center>
                 <button type="submit" class="btn btn-primary " name="add_user" style="margin-top: 30px;width:100px">إضافة</button>
             </center>
