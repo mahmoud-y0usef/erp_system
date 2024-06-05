@@ -1,23 +1,35 @@
 <?php
-// Adjust the path to DB.php according to your directory structure
-require_once '../../../function/DB.php';
-
-session_start();
-if (!isset($_SESSION['id'])) {
-    header('Location: ../../../index.php');
-    exit();
-}
-$db = new DB();
+session_start(); // Start the session if not already started
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    require_once '../../../function/DB.php'; // Adjust the path to DB.php according to your directory structure
+    $db = new DB();
+
+    // Generate a 6-digit ID
+    $id = mt_rand(100000, 999999);
+    
     $service_type = $_POST['service_type'];
     $note = $_POST['note'];
-    // Add your code here to handle the form submission, e.g., save to the database
+    
+    // Retrieve the user's name from the session
+    $requester_name = isset($_SESSION['id']['full_name']) ? $_SESSION['id']['full_name'] : 'Unknown User';
 
-    header('Location: success_page.php'); // Redirect to a success page after submission
-    exit();
+    // Call the It_Request method to insert data into the database
+    $add = $db->It_Request($id, $service_type, $note, $requester_name);
+
+    // Check if the data insertion was successful
+    if ($add) {
+        header('Location: ../../index.php?add_request=success');
+        exit();
+    } else {
+        header('Location: ../../index.php?add_request=error');
+        exit();
+    }
 }
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,8 +39,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>IT Form</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
+        /* Add your custom styles here */
         body {
             background-color: #f8f9fa;
+        }
+        label{
+            color: white;
         }
         .form-container {
             position: relative;

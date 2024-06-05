@@ -33,6 +33,16 @@ class DB
         }
     }
 
+    public function It_Request($id, $service, $note, $sender)
+    {
+        $sql = "INSERT INTO it_service_request (id, service, note, requester) VALUES ('$id', '$service', '$note', ' $sender')";
+        $result = $this->Connection()->query($sql);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     public function Statue($id)
     {
         $sql = "UPDATE users SET status = 1 WHERE user_id = '$id'";
@@ -284,7 +294,20 @@ class DB
             return false;
         }
     }
-
+    public function GetAllRequests()
+    {
+        $sql = "SELECT * FROM   it_service_request";
+        $result = $this->Connection()->query($sql);
+        if ($result->num_rows > 0) {
+            $rows = array();
+            while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+            }
+            return $rows;
+        } else {
+            return false;
+        }
+    }
     public function GetAllRole()
     {
         $sql = "SELECT * FROM role";

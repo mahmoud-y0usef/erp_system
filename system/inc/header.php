@@ -97,7 +97,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="justify-content: end;text-align:center">
         <div class="navbar-nav">
-            <a class="nav-item nav-link" href="#">التقارير</a>
+        <a class="nav-item nav-link" href="../system/view/reports/it.php">التقارير</a>
 
 
 
